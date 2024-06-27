@@ -22,13 +22,11 @@ function setup() {
 
     ground = Bodies.rectangle(400, 590, 810, 20, { isStatic: true });
 
-    // Create some static objects (example)
     objects.push(Bodies.rectangle(200, 300, 100, 50, { isStatic: true }));
     objects.push(Bodies.rectangle(600, 400, 80, 80, { isStatic: true }));
 
     World.add(world, [ground, ...objects]);
 
-    // Mouse controls for throwing balls
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
@@ -43,7 +41,7 @@ function setup() {
     World.add(world, mouseConstraint);
 
     Render.run(render);
-    Engine.run(engine);
+    Engine.run(engine);3
 
     render.canvas.addEventListener('mousedown', function(event) {
         const ball = Bodies.circle(event.offsetX, event.offsetY, 20, { restitution: 0.6 });
